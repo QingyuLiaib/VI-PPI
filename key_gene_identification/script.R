@@ -7,10 +7,10 @@ pneumonia_ctd <- read_csv("./pneumonia_CTD.csv")
 virus_human <- read_delim("./virus_human_HVIDB.csv",
                           delim = "\t", escape_double = FALSE,
                           trim_ws = TRUE)
-a = str_split(virus_human$Human_GeneName,';')
+genename = str_split(virus_human$Human_GeneName,';')
 re = c()
-for(i in 1:length(a)){
-  re = c(re,a[[i]][1])
+for(i in 1:length(genename)){
+  re = c(re,genename[[i]][1])
 }
 virus_human$genename = re
 ###############################################################################
